@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Blog | Contact Us</title>
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky-nav">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html">TheTechBlog</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container page-content">
+        <!-- Contact Us Hero -->
+        <section class="hero text-center">
+            <h1>Contact Us</h1>
+            <p>Have questions or feedback? We'd love to hear from you.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>Feel free to reach out to us using the contact form, or give us a call.</p>
+
+                <div class="contact-methods">
+                    <div class="method">
+                        <strong>Email Address:</strong>
+                        <p><a href="mailto:example@gmail.com">example@gmail.com</a></p>
+                    </div>
+                    <div class="method">
+                        <strong>Phone Number:</strong>
+                        <p>9876543210</p>
+                    </div>
+                    <div class="method">
+                        <strong>Office Location:</strong>
+                        <p>123,T-Nager<br>Chennai</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name">
+                        <span class="error-message" id="nameError">Full name is required.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+                        <span class="error-message" id="emailError">Please enter a valid email address.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this regarding?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Write your message here..."></textarea>
+                        <span class="error-message" id="messageError">Message cannot be empty.</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                    <div class="success-message" id="successMessage">Thank you! Your message has been sent successfully.
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>The Blog Site</h3>
+                <p>Project Group 1.0</p>
+            </div>
+            <div class="footer-authors">
+                <h4>Authors</h4>
+                <ul>
+                    <li>Jothi - jothikalyanam5@gmail.com</li>
+                    <li>Sudhir Menon - sudhirmenon1609@gmail.com</li>
+                    <li>Aruna - arunaajay2002@gmail.com</li>
+                    <li>Saranya. S - saranyasaravanan290620@gmail.com</li>
+                    <li>Tamilarasi S - tamizhsadaiyamuthu@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><a href="mailto:example@gmail.com">example@gmail.com</a></p>
+                <p>9876543210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Blog Site Project. Built with HTML, CSS, and JS.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

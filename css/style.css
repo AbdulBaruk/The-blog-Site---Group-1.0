@@ -1,0 +1,459 @@
+/* 
+ * The Blog Site - Group 1.0
+ * External CSS Stylesheet
+ */
+
+/* =========================================================================
+   1. Base & Reset
+   ========================================================================= */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --bg-main: #ffffff;
+    --bg-alt: #f1f5f9;
+    --border-color: #e2e8f0;
+    --error-color: #ef4444;
+    --success-color: #10b981;
+    --nav-height: 70px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =========================================================================
+   2. Typography
+   ========================================================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+/* =========================================================================
+   3. Navigation (Sticky)
+   ========================================================================= */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-main);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+}
+
+.sticky-nav nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.sticky-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.sticky-nav .nav-links a {
+    color: var(--text-main);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.sticky-nav .nav-links a:hover,
+.sticky-nav .nav-links a.active {
+    color: var(--primary-color);
+}
+
+.sticky-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.sticky-nav .nav-links a:hover::after,
+.sticky-nav .nav-links a.active::after {
+    width: 100%;
+}
+
+/* =========================================================================
+   4. Main Content & Layouts
+   ========================================================================= */
+.page-content {
+    flex: 1;
+    padding: 3rem 1.5rem;
+}
+
+.hero {
+    background-color: var(--bg-alt);
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Home Page: Blog Grid --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-card .card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card .card-content {
+    padding: 1.5rem;
+}
+
+.blog-card .card-content h6 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card .card-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-card .card-content .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* --- About Us Page --- */
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.about-text ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-muted);
+}
+
+.about-text ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* --- Contact Us Page --- */
+.contact-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.contact-info .method {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--bg-alt);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-form-container {
+    background-color: var(--bg-alt);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.error-message {
+    display: none;
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: var(--error-color);
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.success-message {
+    display: none;
+    background-color: var(--success-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.success-message.visible {
+    display: block;
+}
+
+/* =========================================================================
+   5. Footer
+   ========================================================================= */
+footer {
+    background-color: var(--text-main);
+    color: var(--secondary-color);
+    padding: 3rem 0 0 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-info h3,
+.footer-authors h4,
+.footer-contact h4 {
+    color: var(--bg-main);
+    margin-bottom: 1rem;
+}
+
+.footer-info p,
+.footer-authors ul li,
+.footer-contact p {
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.footer-authors ul {
+    list-style: none;
+}
+
+.footer-contact a {
+    color: #94a3b8;
+}
+
+.footer-contact a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    background-color: #0f172a;
+    text-align: center;
+    padding: 1.5rem;
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+/* =========================================================================
+   6. Responsive Design
+   ========================================================================= */
+@media (max-width: 768px) {
+    .sticky-nav .nav-links {
+        display: none;
+        /* In a full app, we'd add a hamburger menu here */
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
